@@ -6,10 +6,13 @@
 # cd aliases
 #
 
-nxs_dir="cd /mnt/d/projects/Nexus/nexus-system-controller"
-alias nxs="${nxs_dir}"
-alias nxsscr="${nxs_dir}/tools/scripts"
-alias nxsbld="${nxs_dir}/build"
+if [[ $HOSTNAME == "AI932995" ]]; then
+   nxs_dir="/mnt/d/projects/Nexus/nexus-system-controller"
+
+   alias nxs="cd ${nxs_dir}"
+   alias nxsscr="cd ${nxs_dir}/tools/scripts"
+   alias nxsbld="cd ${nxs_dir}/build"
+fi
 
 #-------------------------------------------------------------------------------
 
@@ -32,7 +35,7 @@ alias lh="eza -dl .* --group-directories-first"
 # list everything with dirs first
 alias ll="eza -alF --group-directories-first"
 
-# list only files sorted by size
+# list files like normal ls, but with eza
 alias ls="eza"
 
 # list everything sorted by time updated
