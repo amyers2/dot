@@ -33,7 +33,7 @@ alias lh="eza -dl .* --group-directories-first"
 alias ll="eza -alF --group-directories-first"
 
 # list only files sorted by size
-alias ls="eza -alf --color=always --sort=size | grep -v /"
+alias ls="eza"
 
 # list everything sorted by time updated
 alias lt="eza -al --sort=modified"
