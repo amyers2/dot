@@ -46,10 +46,11 @@ __amps1_time() {
 }
 
 __amps1_username() {
-    local cyan=`tput setaf 45`;
+    local BG_YEL=`tput setab 178`;
+    local black=`tput setaf 232`;
     local reset=`tput sgr0`;
 
-    echo "\[${cyan}\] \u \[${reset}\]";
+    echo "\[${BG_YEL}${black}\] \u \[${reset}\]";
 }
 
 __amps1_arrows() {
@@ -112,7 +113,7 @@ __amps1_user_prompt() {
 }
 
 __amps1() {
-    local ps1="\n$(__amps1_box_top)$(__amps1_debian_chroot)$(__amps1_exitcode)$(__amps1_time) $(__amps1_workdir)$(__amps1_git)\n$(__amps1_box_bottom)$(__amps1_user_prompt)";
+    local ps1="\n$(__amps1_box_top)$(__amps1_debian_chroot)$(__amps1_exitcode)$(__amps1_time)$(__amps1_username) $(__amps1_workdir)$(__amps1_git)\n$(__amps1_box_bottom)$(__amps1_user_prompt)";
 
     echo $ps1;
 }
