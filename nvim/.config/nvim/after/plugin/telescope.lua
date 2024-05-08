@@ -7,6 +7,7 @@ require('telescope').setup{
          "rg",
          "--follow",       -- follow symbolic links
          "--hidden",       -- search for hidden files
+         "--column",
          "--line-number",  -- show line numbers
          "--smart-case",   -- smart case search
 
@@ -33,6 +34,9 @@ require('telescope').setup{
          },
       },
    }, 
+   path_display = {
+      "smart"
+   }
 }
 
 -- This allows us to have a "git files search", and an "all files search".
