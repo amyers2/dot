@@ -42,7 +42,7 @@ alias ls="eza"
 alias lt="eza -al --sort=modified"
 
 # some more aliases originally defined in .bashrc
-# (just keeping here for reference)
+# (just keeping here for reference)
 #alias ll='ls -alF'
 #alias la='ls -A'
 #alias l='ls -CF'
