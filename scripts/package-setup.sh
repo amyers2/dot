@@ -51,6 +51,18 @@ function check_and_install_package()
 
 function main()
 {
+   SCRIPT_RELPATH="$(dirname "${BASH_SOURCE[0]}")"
+   SCRIPT_ABSPATH="$(cd "$SCRIPT_RELPATH" && pwd)"
+
+   cd ${SCRIPT_ABSPATH}
+   source ansi-color-codes.sh  # import the ANSI color defines
+   
+   echo
+   
+   if [ "$1" = "--update" ]; then
+      sudo apt update && sudo apt upgrade
+   fi
+
    check_and_install_package "eza"
    check_and_install_package "codium"
 }
