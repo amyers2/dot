@@ -13,9 +13,8 @@ colorscheme PaperColor
 " set tab to use spaces, and some auto indenting stuff
 "set tabstop=3 
 "set shiftwidth=3
-set autoindent 
+set autoindent
 set smartindent
-set expandtab 
 
 " activate line numbers
 set number
