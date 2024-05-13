@@ -10,17 +10,14 @@ syntax on
 set background=dark
 colorscheme PaperColor
 
-" set tab to use spaces, and some auto indenting stuff
-"set tabstop=3 
-"set shiftwidth=3
+" enable auto and smart indentation
 set autoindent
 set smartindent
 
 " activate line numbers
 set number
 
-" absolutely necessary. Try using it without!
-" from Romainl on stackoverflow
+" absolutely necessary. try using it without!
 set backspace=indent,eol,start
 
 " turn off line wrapping
@@ -31,3 +28,18 @@ set list lcs=trail:·,tab:»·,extends:>,precedes:<
 
 " go to the position I was when last editing the file
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
+
+" prevent the cursor from going to the first or last three lines 
+" when scrolling
+set scrolloff=3
+
+" highlight the 81st column in black to show where when a line
+" becomes too long.
+highlight ColorColumn ctermbg=black
+set colorcolumn=81
+
+" show the row and column number at the bottom
+set ruler
+
+" show current filename being edited in the window title bar
+set title
