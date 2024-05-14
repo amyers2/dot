@@ -1,6 +1,6 @@
 " set the default tab to insert 3 spaces
-setlocal shiftwidth=4
-setlocal tabstop=4
+set shiftwidth=4
+set tabstop=4
 set expandtab
 
 " activates filetype detection
@@ -48,3 +48,19 @@ set ruler
 
 " show current filename being edited in the window title bar
 set title
+
+" show the mode you are on in the last line
+set showmode
+
+" show maching words during a search
+set showmatch
+
+" menu tab completion:
+"   1. enable auto completion menu after pressing TAB
+"   2. make wildmenu behave similar to Bash completion
+"   3. there are certain files that we would never want to edit with Vim
+"      wildmenu will ignore files with these extensions
+set wildmenu
+set wildmode=list:longest
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+
