@@ -55,3 +55,11 @@ alias lt="eza -al --sort=modified"
 
 alias stow="stow --no-folding"
 
+#-------------------------------------------------------------------------------
+
+#
+# exiftool aliases
+#
+
+alias picrename="exiftool '-FileName<CreateDate' -d %Y%m%d-%H%M%S.%%le -r"
+
