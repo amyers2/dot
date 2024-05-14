@@ -1,0 +1,12 @@
+#!/bin/bash
+
+
+# `add .` will add everything (recurs.) in the current directory.
+# `add *' will add everything (recurs.) in the current directory,
+#   *except* for the hidden files (.filenames).
+function lazygit()
+{
+   git add .
+   git commit -a -m "$1"
+   git push
+}

@@ -1,3 +1,8 @@
+" set the default tab to insert 3 spaces
+setlocal shiftwidth=4
+setlocal tabstop=4
+set expandtab
+
 " activates filetype detection
 filetype plugin on
 

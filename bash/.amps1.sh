@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-# MKPS1
-# (Mike Kasberg PS1)
-# (Or, Make PS1)
+# AMPSI
+# (Anthony Myers PS1 - adapted from Mike Kasberg's)
 
 # Different functions generate different parts (segments) of the PS1 prompt.
-# Each function should leave the colors in a clean state (e.g. call reset if they changed any colors).
+# Each function should leave the colors in a clean state (e.g. call reset if 
+# they changed any colors).
 
 # For Git PS1
 #source /usr/lib/git-core/git-sh-prompt;
@@ -16,7 +16,8 @@ PROMPT_DIRTRIM=2
 
 __amps1_debian_chroot() {
     # This string is intentionally single-quoted:
-    # It will be evaluated when $PS1 is evaluated to generate the prompt each time.
+    # It will be evaluated when $PS1 is evaluated to generate the prompt each 
+    # time.
     echo '${debian_chroot:+($debian_chroot)}';
 }
 
@@ -73,7 +74,8 @@ __amps1_workdir() {
 parse_git_branch() {
     local magenta=`tput setaf 213`;
     local reset=`tput sgr0`;
-    local bname="$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')"
+    local bname="$(git branch 2> /dev/null | \
+    	sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')"
 
     if [[ ! -z "$bname" ]]; then
         echo " on ${magenta}$bname${reset}"
@@ -87,7 +89,8 @@ __amps1_git() {
     local reset=`tput sgr0`;
 
     # Escaping the $ is intentional:
-    # It makes it so the function gets re-evaluated every time the prompt is generated.
+    # It makes it so the function gets re-evaluated every time the prompt is 
+    # generated.
     #echo "\$(__git_ps1 ' (\[${magenta}\]%s\[${reset}\])')"
     echo "\$(parse_git_branch)"
 }
@@ -113,7 +116,9 @@ __amps1_user_prompt() {
 }
 
 __amps1() {
-    local ps1="\n$(__amps1_box_top)$(__amps1_debian_chroot)$(__amps1_exitcode)$(__amps1_time)$(__amps1_username) $(__amps1_workdir)$(__amps1_git)\n$(__amps1_box_bottom)$(__amps1_user_prompt)";
+    local ps1="\n$(__amps1_box_top)$(__amps1_debian_chroot)$(__amps1_exitcode)"
+    ps1+="$(__amps1_time)$(__amps1_username) $(__amps1_workdir)$(__amps1_git)\n"
+    ps1+="$(__amps1_box_bottom)$(__amps1_user_prompt)";
 
     echo $ps1;
 }
