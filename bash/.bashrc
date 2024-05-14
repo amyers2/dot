@@ -60,7 +60,7 @@ if [ "$color_prompt" = yes ]; then
     #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
     # Read my custom prompt, apply it to PS1
-    source "$HOME/.amps1.sh"
+    source "$HOME/.bash_custom/.amps1.sh"
     PS1="$(__amps1)"
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
@@ -105,13 +105,13 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f ~/.bash_custom/.bash_aliases ]; then
+    . ~/.bash_custom/.bash_aliases
 fi
 
 # Special git functions for performing common actions the easy way.
-if [ -f ~/.git_functs ]; then
-    . ~/.git_functs
+if [ -f ~/.bash_custom/.git_functs ]; then
+    . ~/.bash_custom/.git_functs
 fi
 
 # enable programmable completion features (you don't need to enable
