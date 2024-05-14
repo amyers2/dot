@@ -1,0 +1,10 @@
+[user]
+	name = Anthony Myers
+	email = arm3112@gmail.com
+
+[alias]
+    cob = checkout -b
+    s = status
+    f = fetch
+    p = pull
+    del = branch -D

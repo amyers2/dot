@@ -47,4 +47,11 @@ alias lt="eza -al --sort=modified"
 #alias la='ls -A'
 #alias l='ls -CF'
 
+#-------------------------------------------------------------------------------
+
+#
+# stow aliases
+#
+
+alias stow="stow --no-folding"
 
