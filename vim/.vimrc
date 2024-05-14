@@ -64,3 +64,9 @@ set wildmenu
 set wildmode=list:longest
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
+" show the active line where the cursor is
+set cursorline
+
+" change the cursor between Normal and Insert modes
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
