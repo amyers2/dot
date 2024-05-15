@@ -6,5 +6,6 @@
     cob = checkout -b
     s = status
     f = fetch
-    p = pull
+    p = pull --rebase
     del = branch -D
+    fp = "!f() { git f; git p; }; f"
