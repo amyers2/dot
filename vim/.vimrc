@@ -70,3 +70,7 @@ set cursorline
 " change the cursor between Normal and Insert modes
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
+
+" lessen time it takes for non-escape type letter sequences to complete
+:set ttimeoutlen=100
+
