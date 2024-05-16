@@ -74,3 +74,18 @@ let &t_EI = "\e[2 q"
 " lessen time it takes for non-escape type letter sequences to complete
 :set ttimeoutlen=100
 
+" create the necessary folders for placing swap files and others in vim root
+let s:VIMROOT = $HOME."/.vim"
+
+if exists("*mkdir")
+    silent! call mkdir(s:VIMROOT."/swap", "p")
+    silent! call mkdir(s:VIMROOT."/undo", "p")
+    silent! call mkdir(s:VIMROOT."/backup", "p")
+else
+    echo "Error: Create the directories: ".s:VIMROOT."/swap/, ".s:VIMROOT."/undo/, ".s:VIMROOT.."/backup/ first."
+endif
+
+let &backupdir=s:VIMROOT.'/backup//' " double slash means make the filename unique
+let &directory=s:VIMROOT.'/swap//'
+let &undodir=s:VIMROOT.'/undo//'
+
