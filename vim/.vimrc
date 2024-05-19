@@ -89,3 +89,6 @@ let &backupdir=s:VIMROOT.'/backup//' " double slash means make the filename uniq
 let &directory=s:VIMROOT.'/swap//'
 let &undodir=s:VIMROOT.'/undo//'
 
+" search down into subfolders
+" provides tab-completion for all file-related tasks
+set path+=**
