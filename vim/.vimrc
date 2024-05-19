@@ -85,7 +85,11 @@ else
     echo "Error: Create the directories: ".s:VIMROOT."/swap/, ".s:VIMROOT."/undo/, ".s:VIMROOT.."/backup/ first."
 endif
 
-let &backupdir=s:VIMROOT.'/backup//' " double slash means make the filename unique
+" set the directories for backup, swap, and undo files
+" (I don't like clutterying up my current project work area)
+" double slash at the end means ot make the filename unique, in case there
+" are same-named files in different directories
+let &backupdir=s:VIMROOT.'/backup//'
 let &directory=s:VIMROOT.'/swap//'
 let &undodir=s:VIMROOT.'/undo//'
 
