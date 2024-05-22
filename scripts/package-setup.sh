@@ -28,7 +28,8 @@ function config_codium_install()
 
 function check_and_install_package()
 {
-   if [ "$(dpkg -s $1 | grep installed)" ]; then
+   if dpkg -s "$1" | grep -q installed
+   then
       echo -e "[${LGT_GRN}  OK   ${RST}] ${LGT_MAG}$1${RST} already installed."
       return
    fi
@@ -54,7 +55,7 @@ function main()
    SCRIPT_RELPATH="$(dirname "${BASH_SOURCE[0]}")"
    SCRIPT_ABSPATH="$(cd "$SCRIPT_RELPATH" && pwd)"
 
-   cd ${SCRIPT_ABSPATH}
+   cd "${SCRIPT_ABSPATH}" || exit
    source ansi-color-codes.sh  # import the ANSI color defines
    
    echo
