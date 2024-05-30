@@ -96,3 +96,16 @@ let &undodir=s:VIMROOT.'/undo//'
 " search down into subfolders
 " provides tab-completion for all file-related tasks
 set path+=**
+
+" create a mapping to a leader key for custom commands
+let mapleader = " "
+
+"-------------------------------------------------------------------------------
+" Custom Commands
+"-------------------------------------------------------------------------------
+
+" A little hack for allowing vim to copy and paste to the "clipboard"
+" (really it's just a temp file)
+vmap <leader>y :w! /tmp/vim_tmp<CR>
+nmap <leader>p :r! cat /tmp/vim_tmp<CR>
+
