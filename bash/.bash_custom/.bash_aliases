@@ -12,6 +12,12 @@ if [[ $HOSTNAME == "AI932995" ]]; then
    alias nxs="cd ${nxs_dir}"
    alias nxsscr="cd ${nxs_dir}/tools/scripts"
    alias nxsbld="cd ${nxs_dir}/build"
+elif [[ $HOSTNAME == "9020M" ]]; then
+   nxs_dir="~/projects/nexus-system-controller"
+
+   alias nxs="cd ${nxs_dir}"
+   alias nxsscr="cd ${nxs_dir}/tools/scripts"
+   alias nxsbld="cd ${nxs_dir}/build"
 fi
 
 #-------------------------------------------------------------------------------
