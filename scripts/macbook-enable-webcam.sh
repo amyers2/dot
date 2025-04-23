@@ -4,11 +4,13 @@
 
 # Navigate to facetimehd-firmware dl location
 cd ../../git/facetimehd-firmware || exit
+make clean
 make
 sudo make install
 
 # Navigate to bcwc_pcie dl location
 cd ../bcwc_pcie || exit
+make clean
 make
 sudo make install
 sudo depmod
