@@ -8,10 +8,12 @@
 
 if [[ $HOSTNAME == "AI932995" ]]; then
    nxs_dir="/mnt/d/projects/Nexus/nexus-system-controller"
+   edr_dir="/mnt/d/projects/eDragon"
 
    alias nxs="cd ${nxs_dir}"
    alias nxsscr="cd ${nxs_dir}/tools/scripts"
    alias nxsbld="cd ${nxs_dir}/build"
+   alias edr="cd ${edr_dir}"
 elif [[ $HOSTNAME == "9020M" ]]; then
    nxs_dir="~/projects/nexus-system-controller"
 
