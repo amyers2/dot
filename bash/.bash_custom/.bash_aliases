@@ -31,23 +31,23 @@ fi
 #   https://denisrasulev.medium.com/eza-the-best-ls-command-replacement-9621252323e
 #
 
+# list files like normal ls, but with eza
+alias ls="eza -g"
+
 # list only directories (no files)
-alias ld="eza -lD"
+alias ld="ls -lD"
 
 # list only the files (no dirs)
-alias lf="eza -lf --color=always | grep -v /"
+alias lf="ls -lf --color=always | grep -v /"
 
 # list only hidden files (no dirs)
-alias lh="eza -dl .* --group-directories-first"
+alias lh="ls -dl .* --group-directories-first"
 
 # list everything with dirs first
-alias ll="eza -alF --group-directories-first"
-
-# list files like normal ls, but with eza
-alias ls="eza"
+alias ll="ls -alF --group-directories-first"
 
 # list everything sorted by time updated
-alias lt="eza -al --sort=modified"
+alias lt="ls -al --sort=modified"
 
 # some more aliases originally defined in .bashrc
 # (just keeping here for reference)
